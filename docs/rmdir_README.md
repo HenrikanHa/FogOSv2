@@ -70,7 +70,7 @@ OK
 Test: refuse non-directory... rmdir: afile.txt: not a directory
 OK
 Test: -v prints confirmation... OK
-Manual: try `rmdir` with multiple args yourself in the shell.
+Manual:  try `rmdir` with multiple args or flag -v yourself in the shell.
 ```
 
 ---
