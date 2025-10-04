@@ -217,6 +217,28 @@ test_move_into_dir_with_slash()
   unlink("ds");
 }
 
+static void 
+test_move_between_dirs() 
+{
+  printf("Test: move file between directories... ");
+  mkdir("dir1");
+  mkdir("dir2");
+  create_file("dir1/x3", "content");
+
+  char *argv[] = {"mv", "dir1/x3", "dir2", 0};
+  run_mv(argv);
+
+  if (!file_exists("dir1/x3") && file_exists("dir2/x3")) {
+    printf("OK\n");
+  } else {
+    printf("FAIL\n");
+  }
+
+  unlink("dir2/x3");
+  unlink("dir1");
+  unlink("dir2");
+}
+
 int
 main(int argc, char *argv[])
 {
@@ -226,6 +248,7 @@ main(int argc, char *argv[])
   test_move_into_dir();
   test_same_file();
   test_move_into_dir_with_slash();
+  test_move_between_dirs();
   printf("Manual test: run `mv -i src dst` and try typing y/n yourself.\n");
   exit(0);
 }
