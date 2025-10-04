@@ -54,7 +54,7 @@ rmdir [-v] DIR [DIR ...]
 # Remove an empty directory
 $ mkdir emptydir
 $ rmdir emptydir
-# (no output, directory gone)
+# (no output, directory removed)
 
 # Try removing a non-empty directory
 $ mkdir full
@@ -62,15 +62,21 @@ $ echo hello > full/file.txt
 $ rmdir full
 rmdir: full: directory not empty
 
-# Verbose mode
+# Verbose mode (-v)
 $ mkdir vdir
 $ rmdir -v vdir
 rmdir: removed directory 'vdir'
 
-# Multiple arguments
+# Multiple empty directories
 $ mkdir d1 d2
 $ rmdir d1 d2
 # Both removed if empty
+
+# Try removing a non-directory
+$ echo hello > afile.txt
+$ rmdir afile.txt
+rmdir: afile.txt: not a directory
+
 ```
 
 ---
