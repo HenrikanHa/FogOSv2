@@ -84,17 +84,30 @@ $ mv dir1/x.txt dir2
 $ ls dir2
 x.txt
 
-# Overwrite a file without asking
+# Move into directory with a trailing slash
+$ mkdir ds
+$ echo "hi" > file1.txt
+$ mv file1.txt ds/
+$ ls ds
+file1.txt
+
+# Overwrite a file without asking (-f)
 $ echo old > a.txt
 $ echo new > b.txt
 $ mv -f a.txt b.txt
 # 'b.txt' now contains "old"
 
-# Interactive mode
+# Interactive mode (-i)
 $ echo "A" > one.txt
 $ echo "B" > two.txt
 $ mv -i one.txt two.txt
 mv: overwrite 'two.txt'? (y/Y to confirm)
+# 'two.txt' now contains "A"
+
+# Same file detection
+$ echo "same" > s.txt
+$ mv s.txt ./s.txt
+mv: 's.txt' and './s.txt' are the same file
 ```
 
 ---
