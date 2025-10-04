@@ -13,6 +13,31 @@ This behavior matches typical `mv`.
 
 ---
 
+## Build Instructions
+To build:
+```sh
+$ make clean
+$ make qemu
+```
+or:
+```sh
+$ make clean && make qemu
+```
+This will compile both commands (`mv` and `rmdir`) and their corresponding test programs (`mvtest`, `rmdirtest`).
+You can verify the binaries are included by running:
+```sh
+$ ls
+```
+You should see entries like:
+```
+mv
+mvtest
+rmdir
+rmdirtest
+```
+
+---
+
 ## Usage
 
 ```sh
