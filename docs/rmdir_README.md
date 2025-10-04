@@ -1,4 +1,4 @@
-`rmdir` Command Documentation
+# `rmdir` Command Documentation
 
 ## Overview
 
@@ -53,7 +53,7 @@ $ rmdir d1 d2
 ## Test Program
 
 We provide `rmdirtest` to automatically check correctness.
-
+**Please run it before you try anything manually!**
 Run it with:
 
 ```sh
